@@ -2,7 +2,8 @@ const WEATHER_API_KEY = "1f0e8218104847a2aea180227253108";
 const baseURL = "http://api.weatherapi.com/v1";
 
 const placeholder = document.getElementById("placeholder");
-const weatherContainer = document.getElementById("weather-container ");
+const weatherContainer = document.getElementById("weather-container");
+const errorContainer = document.getElementById("error-message");
 const form = document.getElementById("weather-form");
 const searchInput = document.getElementById("search-city");
 const submitBtn = document.getElementById("submit-btn");
@@ -18,6 +19,7 @@ const humidityElem = document.getElementById("humidity");
 const pressureElem = document.getElementById("pressure");
 const cloudElem = document.getElementById("cloud-cover");
 const uvIndexElem = document.getElementById("UV");
+console.log(weatherContainer)
 
 submitBtn.disabled = true;
 
@@ -35,9 +37,9 @@ async function fetchCurrentWeather() {
         const weatherData = await res.json();
         updateWeatherUI(weatherData);
 
-        showWeather()
+        showWeather();
     } catch (err) {
-        alert(err.message);
+        showError()
     }
 }
 
@@ -84,11 +86,17 @@ function formatLocalTime(localtime) {
 }
 
 function showWeather() {
-    placeholder.classList.remove("block");
     placeholder.classList.add("hidden");
-
     weatherContainer.classList.remove("hidden");
     weatherContainer.classList.add("block");
+    errorContainer.classList.add("hidden");
+}
+
+function showError() {
+    placeholder.classList.add("hidden");
+    weatherContainer.classList.add("hidden");
+    errorContainer.classList.remove("hidden");
+    errorContainer.classList.add("flex");
 }
 
 searchInput.addEventListener("input", (e) => {
