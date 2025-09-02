@@ -61,7 +61,9 @@
 
                 <div
                     class="flex flex-col md:flex-row items-center justify-center md:justify-between gap-4">
-                    <form class="flex items-center gap-2 w-full max-w-lg">
+                    <form
+                        id="weather-form"
+                        class="flex items-center gap-2 w-full max-w-lg">
                         <div class="relative flex-1 h-9">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
@@ -82,12 +84,14 @@
 
                             <input
                                 type="text"
+                                id="search-city"
                                 class="absolute inset-0 py-1 pl-9 pr-2.5 bg-white/90 dark:bg-gray-800 border border-slate-200 dark:border-slate-600 outline-0 outline-gray-400 dark:outline-gray-600 focus:outline-3 rounded-lg text-sm placeholder:text-slate-500 transition-all"
                                 placeholder="Enter city name ..." />
                         </div>
 
                         <button
                             type="submit"
+                            id="submit-btn"
                             class="flex justify-center items-center w-9 h-9 rounded-lg bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50 disabled:hover:bg-blue-600 transition-colors cursor-pointer disabled:cursor-auto"
                             disabled>
                             <svg
@@ -360,7 +364,9 @@
                                 </p>
                                 <p
                                     id="UV"
-                                    class="text-sm font-medium transition-colors">0</p>
+                                    class="text-sm font-medium transition-colors">
+                                    0
+                                </p>
                             </div>
                         </div>
                     </div>
