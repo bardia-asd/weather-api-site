@@ -1,6 +1,8 @@
 const WEATHER_API_KEY = "1f0e8218104847a2aea180227253108";
 const baseURL = "http://api.weatherapi.com/v1";
 
+const placeholder = document.getElementById("placeholder");
+const weatherContainer = document.getElementById("weather-container ");
 const form = document.getElementById("weather-form");
 const searchInput = document.getElementById("search-city");
 const submitBtn = document.getElementById("submit-btn");
@@ -32,6 +34,8 @@ async function fetchCurrentWeather() {
 
         const weatherData = await res.json();
         updateWeatherUI(weatherData);
+
+        showWeather()
     } catch (err) {
         alert(err.message);
     }
@@ -79,6 +83,14 @@ function formatLocalTime(localtime) {
     });
 }
 
+function showWeather() {
+    placeholder.classList.remove("block");
+    placeholder.classList.add("hidden");
+
+    weatherContainer.classList.remove("hidden");
+    weatherContainer.classList.add("block");
+}
+
 searchInput.addEventListener("input", (e) => {
     if (searchInput.value.trim() !== "") {
         submitBtn.disabled = false; // Enable if there is text
@@ -95,6 +107,5 @@ searchInput.addEventListener("keydown", (e) => {
 
 form.addEventListener("submit", (e) => {
     e.preventDefault();
-
     fetchCurrentWeather();
 });

@@ -12,7 +12,6 @@
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
     --color-blue-700: oklch(48.8% 0.243 264.376);
-    --color-blue-950: oklch(28.2% 0.091 267.935);
     --color-slate-50: oklch(98.4% 0.003 247.858);
     --color-slate-200: oklch(92.9% 0.013 255.508);
     --color-slate-300: oklch(86.9% 0.022 252.894);
@@ -20,7 +19,6 @@
     --color-slate-500: oklch(55.4% 0.046 257.417);
     --color-slate-600: oklch(44.6% 0.043 257.281);
     --color-gray-400: oklch(70.7% 0.022 261.325);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
     --color-gray-800: oklch(27.8% 0.033 256.848);
@@ -257,6 +255,9 @@
   .mb-2\.5 {
     margin-bottom: calc(var(--spacing) * 2.5);
   }
+  .mb-4 {
+    margin-bottom: calc(var(--spacing) * 4);
+  }
   .mb-8 {
     margin-bottom: calc(var(--spacing) * 8);
   }
@@ -275,9 +276,6 @@
   .table {
     display: table;
   }
-  .h-0 {
-    height: calc(var(--spacing) * 0);
-  }
   .h-4 {
     height: calc(var(--spacing) * 4);
   }
@@ -289,6 +287,9 @@
   }
   .h-9 {
     height: calc(var(--spacing) * 9);
+  }
+  .h-16 {
+    height: calc(var(--spacing) * 16);
   }
   .h-20 {
     height: calc(var(--spacing) * 20);
@@ -304,6 +305,9 @@
   }
   .w-9 {
     width: calc(var(--spacing) * 9);
+  }
+  .w-16 {
+    width: calc(var(--spacing) * 16);
   }
   .w-19 {
     width: calc(var(--spacing) * 19);
@@ -361,9 +365,6 @@
   .justify-center {
     justify-content: center;
   }
-  .gap-1 {
-    gap: calc(var(--spacing) * 1);
-  }
   .gap-2 {
     gap: calc(var(--spacing) * 2);
   }
@@ -385,9 +386,6 @@
   }
   .border-slate-200 {
     border-color: var(--color-slate-200);
-  }
-  .border-slate-600 {
-    border-color: var(--color-slate-600);
   }
   .bg-blue-500 {
     background-color: var(--color-blue-500);
@@ -422,6 +420,9 @@
   .py-8 {
     padding-block: calc(var(--spacing) * 8);
   }
+  .py-16 {
+    padding-block: calc(var(--spacing) * 16);
+  }
   .pr-2 {
     padding-right: calc(var(--spacing) * 2);
   }
@@ -446,9 +447,9 @@
     font-size: var(--text-4xl);
     line-height: var(--tw-leading, var(--text-4xl--line-height));
   }
-  .text-5xl {
-    font-size: var(--text-5xl);
-    line-height: var(--tw-leading, var(--text-5xl--line-height));
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
   }
   .text-sm {
     font-size: var(--text-sm);
@@ -478,6 +479,15 @@
   }
   .text-slate-50 {
     color: var(--color-slate-50);
+  }
+  .text-slate-200 {
+    color: var(--color-slate-200);
+  }
+  .text-slate-300 {
+    color: var(--color-slate-300);
+  }
+  .text-slate-400 {
+    color: var(--color-slate-400);
   }
   .text-slate-500 {
     color: var(--color-slate-500);
@@ -522,11 +532,6 @@
     transition-property: opacity;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .placeholder\:text-gray-500 {
-    &::placeholder {
-      color: var(--color-gray-500);
-    }
   }
   .placeholder\:text-slate-500 {
     &::placeholder {
@@ -613,11 +618,6 @@
       line-height: var(--tw-leading, var(--text-lg--line-height));
     }
   }
-  .dark\:block {
-    &:where(.dark, .dark *) {
-      display: block;
-    }
-  }
   .dark\:flex {
     &:where(.dark, .dark *) {
       display: flex;
@@ -626,16 +626,6 @@
   .dark\:hidden {
     &:where(.dark, .dark *) {
       display: none;
-    }
-  }
-  .dark\:h-0 {
-    &:where(.dark, .dark *) {
-      height: calc(var(--spacing) * 0);
-    }
-  }
-  .dark\:h-8 {
-    &:where(.dark, .dark *) {
-      height: calc(var(--spacing) * 8);
     }
   }
   .dark\:w-0 {
@@ -651,11 +641,6 @@
   .dark\:border-slate-600 {
     &:where(.dark, .dark *) {
       border-color: var(--color-slate-600);
-    }
-  }
-  .dark\:bg-blue-950 {
-    &:where(.dark, .dark *) {
-      background-color: var(--color-blue-950);
     }
   }
   .dark\:bg-gray-800 {
