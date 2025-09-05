@@ -99,7 +99,7 @@ function showError() {
     errorContainer.classList.add("flex");
 }
 
-searchInput.addEventListener("input", (e) => {
+searchInput.addEventListener("input", () => {
     if (searchInput.value.trim() !== "") {
         submitBtn.disabled = false; // Enable if there is text
     } else {
